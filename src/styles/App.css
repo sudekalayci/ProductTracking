@@ -1,0 +1,145 @@
+/* Genel stil */
+body {
+    margin: 0;
+    background: #fdf9f4;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  .App {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  /* Arama */
+  .search {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  /* Ürün grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .card img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  
+  /* Durum renkleri */
+  .good {
+    color: green;
+  }
+  
+  .warning {
+    color: orange;
+  }
+  
+  .expired {
+    color: red;
+  }
+  
+  /* + butonu */
+  .add-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #1ba39c;
+    color: white;
+    font-size: 24px;
+    border: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Modal/form */
+  .modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .form input[type="text"],
+  .form input[type="number"],
+  .form input[type="date"],
+  .form input[type="file"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .form button {
+    padding: 10px;
+    border: none;
+    background: #1ba39c;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .form button:last-child {
+    background: #aaa;
+  }
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  
