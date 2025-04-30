@@ -5,7 +5,6 @@ import ProductForm from "./components/ProductForm";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  // localStorage'dan veriyi okuyoruz. Verileri sayfa her açıldığında alıyoruz.
   const [products, setProducts] = useState(() => {
     const saved = localStorage.getItem("makeup-products");
     return saved ? JSON.parse(saved) : [];
@@ -13,22 +12,31 @@ function App() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [editProduct, setEditProduct] = useState(null);
 
-  // products değiştiğinde localStorage'a kaydediyoruz.
   useEffect(() => {
-    if (products.length > 0) {
-      console.log("Veri localStorage'a kaydediliyor:", products); // Konsol logu ekleyelim
-      localStorage.setItem("makeup-products", JSON.stringify(products));
-    }
+    localStorage.setItem("makeup-products", JSON.stringify(products));
   }, [products]);
 
-  const addProduct = (product) => {
-    setProducts((prevProducts) => [...prevProducts, product]);
+  const handleSaveProduct = (product) => {
+    if (editProduct) {
+      setProducts((prev) =>
+        prev.map((p) => (p.id === product.id ? product : p))
+      );
+      setEditProduct(null);
+    } else {
+      setProducts((prev) => [...prev, product]);
+    }
     setShowForm(false);
   };
 
   const deleteProduct = (productId) => {
-    setProducts((prevProducts) => prevProducts.filter((p) => p.id !== productId));
+    setProducts((prev) => prev.filter((p) => p.id !== productId));
+  };
+
+  const handleEditProduct = (product) => {
+    setEditProduct(product);
+    setShowForm(true);
   };
 
   const filteredProducts = searchTerm
@@ -39,16 +47,24 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Makyaj Ürünlerim</h1>
+      <h1>Makeup Tracker</h1>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <ProductGrid 
-        products={filteredProducts} 
-        onDelete={deleteProduct} 
+      <ProductGrid
+        products={filteredProducts}
+        onDelete={deleteProduct}
+        onEdit={handleEditProduct}
       />
-      <button className="add-btn" onClick={() => setShowForm(true)}>
-        +
-      </button>
-      {showForm && <ProductForm onAdd={addProduct} onCancel={() => setShowForm(false)} />}
+      <button className="add-btn" onClick={() => setShowForm(true)}>+</button>
+      {showForm && (
+        <ProductForm
+          onAdd={handleSaveProduct}
+          onCancel={() => {
+            setShowForm(false);
+            setEditProduct(null);
+          }}
+          initialData={editProduct}
+        />
+      )}
     </div>
   );
 }

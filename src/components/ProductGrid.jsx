@@ -1,19 +1,16 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-function ProductGrid({ products, onDelete }) {
+function ProductGrid({ products, onDelete, onEdit }) {
   return (
     <div className="product-grid">
       {products.map((product) => (
-        <div key={product.id} className="product-card">
-          <ProductCard product={product} />
-          <button 
-            className="delete-btn" 
-            onClick={() => onDelete(product.id)}  // Silme işlemi
-          >
-            Sil
-          </button>
-        </div>
+        <ProductCard
+          key={product.id}
+          product={product}
+          onDelete={onDelete}
+          onEdit={onEdit}
+        />
       ))}
     </div>
   );

@@ -1,14 +1,22 @@
-import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";  // uuid kütüphanesini import ettik
+import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-function ProductForm({ onAdd, onCancel }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    category: "",
-    usageMonths: "",
-    expiryDate: "",
-    image: "",
-  });
+function ProductForm({ onAdd, onCancel, initialData }) {
+  const [formData, setFormData] = useState(
+    initialData || {
+      name: "",
+      category: "",
+      usageMonths: "",
+      expiryDate: "",
+      image: "",
+    }
+  );
+
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData);
+    }
+  }, [initialData]);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -22,8 +30,11 @@ function ProductForm({ onAdd, onCancel }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newProduct = { ...formData, id: uuidv4() };  // Benzersiz bir id ekledik
-    onAdd(newProduct);
+    const productToSave = {
+      ...formData,
+      id: initialData ? initialData.id : uuidv4(),
+    };
+    onAdd(productToSave);
     setFormData({
       name: "",
       category: "",
@@ -36,7 +47,7 @@ function ProductForm({ onAdd, onCancel }) {
   return (
     <div className="modal">
       <form className="form" onSubmit={handleSubmit}>
-        <h2>Yeni Ürün</h2>
+        <h2>{initialData ? "Ürünü Düzenle" : "Yeni Ürün"}</h2>
         <input
           type="text"
           placeholder="Ürün adı"
@@ -65,7 +76,7 @@ function ProductForm({ onAdd, onCancel }) {
           onChange={(e) => setFormData({ ...formData, expiryDate: e.target.value })}
         />
         <input type="file" accept="image/*" onChange={handleImageUpload} />
-        <button type="submit">Kaydet</button>
+        <button type="submit">{initialData ? "Güncelle" : "Kaydet"}</button>
         <button type="button" onClick={onCancel}>İptal</button>
       </form>
     </div>

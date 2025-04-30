@@ -14,15 +14,14 @@ function SearchBar({ searchTerm, setSearchTerm }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearchTerm(inputValue);
-    }, 500); // 500ms delay before updating searchTerm
-
-    return () => clearTimeout(timer); // Clean up on component unmount or inputValue change
+    }, 500);
+    return () => clearTimeout(timer);
   }, [inputValue, setSearchTerm]);
 
   return (
     <input
       type="text"
-      placeholder="Ürün ara..."
+      placeholder="Search"
       value={inputValue}
       className="search"
       onChange={handleChange}
