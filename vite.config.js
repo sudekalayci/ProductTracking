@@ -1,5 +1,8 @@
-// vite.config.js
-export default {
-    server: {
-    },
-  };
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})

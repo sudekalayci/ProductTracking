@@ -5,7 +5,6 @@ body {
 }
 
 .App {
-  max-width: 960px;
   margin: auto;
   padding: 20px;
 }
@@ -16,11 +15,9 @@ h1 {
   margin-bottom: 20px;
 }
 
-h3{
-  margin: 10px 0px;
-}
-p{
-  margin: 10px 0px;
+h3,
+p {
+  margin: 10px 0;
 }
 
 .search {
@@ -54,12 +51,12 @@ p{
   margin-bottom: 12px;
 }
 
-.product-category{
+.product-category {
   color: #4e4e4e;
   font-size: 18px;
 }
 
-.usage-info{
+.usage-info {
   font-size: 14px;
   color: #a6a6a6;
 }
@@ -70,6 +67,7 @@ p{
   gap: 10px;
   margin-top: 10px;
 }
+
 .edit-btn,
 .delete-btn {
   flex: 1;
@@ -85,7 +83,6 @@ p{
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-/* Düzenle butonu – soft nude/mint hissi */
 .edit-btn {
   background-color: #eefaf9;
   color: #1aa39c;
@@ -96,7 +93,6 @@ p{
   color: #14827d;
 }
 
-/* Sil butonu – soft pembe hissi */
 .delete-btn {
   background-color: #fef0f0;
   color: #e05650;
@@ -136,8 +132,10 @@ p{
 
 .modal {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
@@ -178,4 +176,45 @@ p{
 
 .form button:last-child {
   background: #aaa;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+}
+
+.left-sidebar,
+.right-sidebar {
+  width: 200px;
+}
+
+.left-sidebar ul,
+.right-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-sidebar li,
+.right-sidebar li {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.left-sidebar li:hover,
+.right-sidebar li:hover {
+  background-color: #f0f0f0;
+}
+
+.left-sidebar li.active,
+.right-sidebar li.active {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.product-area {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
 }

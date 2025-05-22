@@ -1,8 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Vite ile gelen React 18+ kullanımı
-import App from './App'; // Uygulamanızın ana component'i
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-// React 18+ ile gelen 'root' API'si
 const root = ReactDOM.createRoot(document.getElementById('root')); 
 
 root.render(
