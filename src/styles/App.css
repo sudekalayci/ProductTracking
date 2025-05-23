@@ -6,7 +6,6 @@ body {
 
 .App {
   margin: auto;
-  padding: 20px;
 }
 
 h1 {
@@ -19,9 +18,15 @@ h3,
 p {
   margin: 10px 0;
 }
-
+.top-box{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
 .search {
-  width: 98%;
+  width: 96%;
   padding: 10px;
   font-size: 16px;
   border-radius: 24px;
@@ -180,41 +185,68 @@ p {
 
 .main-content {
   display: flex;
-  gap: 20px;
 }
 
-.left-sidebar,
-.right-sidebar {
-  width: 200px;
+.left-sidebar {
+    width: 200px;
+    padding: 24px;
+    border-right: 1px solid #3333330e;
+    background-color: #f0f8ff24;
 }
 
-.left-sidebar ul,
-.right-sidebar ul {
+.left-sidebar ul {
   list-style: none;
   padding: 0;
 }
 
-.left-sidebar li,
-.right-sidebar li {
+.left-sidebar li, .sort-menu li {
   cursor: pointer;
   padding: 5px 10px;
   border-radius: 5px;
-  transition: background 0.3s;
+  border: #444;
 }
 
-.left-sidebar li:hover,
-.right-sidebar li:hover {
-  background-color: #f0f0f0;
+.left-sidebar li:hover, .sort-menu li:hover  {
+  background-color: #f0f0f02e;
 }
 
-.left-sidebar li.active,
-.right-sidebar li.active {
-  background-color: #e0e0e0;
+.left-sidebar li.active, .sort-menu li.active{
+  border: 1px solid rgba(0, 0, 0, 0.26);
   font-weight: bold;
 }
 
 .product-area {
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    margin: 24px;
+    background: #fff0ff24;
+    border-radius: 24px;
+    border: 1px solid #5814581a ;
+}
+.sort-toggle {
+  position: relative;
+  margin-top: 20px;
+}
+
+.sort-button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.17em;
+  background-color: white;
+}
+
+.sort-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  border-radius: 4px;
 }

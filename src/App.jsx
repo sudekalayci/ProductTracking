@@ -76,11 +76,10 @@ function App() {
   }
 
   const categories = [...new Set(products.map((p) => p.category))];
+  const [showSortMenu, setShowSortMenu] = useState(false);
 
   return (
     <div className="App">
-      <h1>Makeup Tracker</h1>
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className="main-content">
         <div className="left-sidebar">
           <CategoryFilter
@@ -88,8 +87,52 @@ function App() {
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
           />
+          <div className="sort-toggle">
+  <button
+    onClick={() => setShowSortMenu((prev) => !prev)}
+    className="sort-button"
+  >
+    Sıralama
+  </button>
+  {showSortMenu && (
+    <ul className="sort-menu">
+      <li
+        onClick={() => {
+          setSortType("expired");
+          setShowSortMenu(false);
+        }}
+        className={sortType === "expired" ? "active" : ""}
+      >
+        Süresi Geçenler
+      </li>
+      <li
+        onClick={() => {
+          setSortType("soon");
+          setShowSortMenu(false);
+        }}
+        className={sortType === "soon" ? "active" : ""}
+      >
+        Yakınlaşanlar
+      </li>
+      <li
+        onClick={() => {
+          setSortType("long");
+          setShowSortMenu(false);
+        }}
+        className={sortType === "long" ? "active" : ""}
+      >
+        Zamanı Olanlar
+      </li>
+    </ul>
+  )}
+</div>
+
         </div>
         <div className="product-area">
+          <div className="top-box">
+      <h1>Makeup Tracker</h1>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      </div>
           <ProductGrid
             products={filteredProducts}
             onDelete={deleteProduct}
@@ -97,14 +140,7 @@ function App() {
           />
           <button className="add-btn" onClick={() => setShowForm(true)}>+</button>
         </div>
-        <div className="right-sidebar">
-          <h3>Sıralama</h3>
-          <ul>
-            <li onClick={() => setSortType("expired")} className={sortType === "expired" ? "active" : ""}>Süresi Geçenler</li>
-            <li onClick={() => setSortType("soon")} className={sortType === "soon" ? "active" : ""}>Yakınlaşanlar</li>
-            <li onClick={() => setSortType("long")} className={sortType === "long" ? "active" : ""}>Zamanı Olanlar</li>
-          </ul>
-        </div>
+        
       </div>
       {showForm && (
         <ProductForm

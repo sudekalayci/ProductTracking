@@ -21,7 +21,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
   return (
     <input
       type="text"
-      placeholder="Search"
+      placeholder="Ara"
       value={inputValue}
       className="search"
       onChange={handleChange}
