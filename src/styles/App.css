@@ -250,7 +250,7 @@ p {
   z-index: 10;
   border-radius: 4px;
 }
-/* Responsive düzenlemeler */
+
 @media (max-width: 768px) {
   .main-content {
     flex-direction: column;

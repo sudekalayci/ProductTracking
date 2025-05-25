@@ -32,7 +32,6 @@ function CategoryFilter({ categories, selectedCategory, onSelectCategory }) {
     );
   }
 
-  // Masaüstü için mevcut liste
   return (
     <div className="category-filter">
       <h3>Kategoriler</h3>
