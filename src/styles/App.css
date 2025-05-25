@@ -250,3 +250,82 @@ p {
   z-index: 10;
   border-radius: 4px;
 }
+/* Responsive düzenlemeler */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .left-sidebar {
+    width: 100%;
+    padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid #3333330e;
+  }
+
+  .product-area {
+    margin: 0;
+    padding: 16px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+
+  .search {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .card img {
+    height: 100px;
+  }
+
+  .add-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .form {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .sort-button {
+    font-size: 1em;
+    padding: 6px 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .top-box {
+    padding: 0 10px;
+  }
+
+  .left-sidebar li,
+  .sort-menu li {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+}
+.category-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
