@@ -47,7 +47,7 @@ Proje, hızlı geliştirme için Hot Module Replacement (HMR) özelliğine sahip
 4. Değişiklikleri dalınıza push edin
 5. Pull Request oluşturun
 
-
+![Proje](./public/proje.jpg)
 
 ![Proje 1](./public/proje1.jpg)
 
