@@ -1,12 +1,52 @@
-# React + Vite
+# Makyaj Takip Uygulaması
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Makyaj Takip Uygulaması, makyaj ürünlerini takip etmek ve yönetmek için geliştirilmiş bir React tabanlı uygulamadır. Bu uygulama, kullanıcıların makyaj koleksiyonlarını takip etmesine, son kullanma tarihlerini kontrol etmesine ve güzellik ürünlerini yönetmesine yardımcı olur.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Detaylı bilgi ile makyaj ürünlerini takip etme
+- Son kullanma tarihlerini izleme
+- Kategori bazında ürün organizasyonu
+- Kullanıcı dostu arayüz
+- Tüm cihazlar için uyumlu tasarım
 
-## Expanding the ESLint configuration
+## Teknoloji Stack'i
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- Kod kalitesi için ESLint
+- Modern JavaScript/ES6+
+
+## Başlarken
+
+1. Repositoriyi klonlayın
+2. Gereksinimleri yükleyin:
+   ```bash
+   npm install
+   ```
+3. Geliştirme sunucusunu başlatın:
+   ```bash
+   npm run dev
+   ```
+
+## Proje Yapısı
+
+- `/src` - Kaynak kod dizini
+- `/public` - Statik dosyalar
+- `/node_modules` - Proje bağımlılıkları
+
+## Geliştirme
+
+Proje, hızlı geliştirme için Hot Module Replacement (HMR) özelliğine sahip Vite kullanır. Kod kalitesi için ESLint yapılandırılmıştır.
+
+## Katkıda Bulunma
+
+1. Repository'i forklayın
+2. Özellik dalınızı oluşturun
+3. Değişikliklerinizi commit edin
+4. Değişiklikleri dalınıza push edin
+5. Pull Request oluşturun
+
+## Lisans
+
+Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için LICENSE dosyasına bakın.
