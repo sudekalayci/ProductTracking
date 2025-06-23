@@ -47,6 +47,17 @@ Proje, hızlı geliştirme için Hot Module Replacement (HMR) özelliğine sahip
 4. Değişiklikleri dalınıza push edin
 5. Pull Request oluşturun
 
+## Görseller
+
+### Proje 1
+![Proje 1](./public/proje1.jpg)
+
+### Proje 2
+![Proje 2](./public/proje2.jpg)
+
+### Proje 3
+![Proje 3](./public/proje3.jpg)
+
 ## Lisans
 
 Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için LICENSE dosyasına bakın.
