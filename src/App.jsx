@@ -103,16 +103,7 @@ function App() {
             }}
             className={sortType === "expired" ? "active" : ""}
           >
-            Süresi Geçenler
-          </li>
-          <li
-            onClick={() => {
-              setSortType("soon");
-              setShowSortMenu(false);
-            }}
-            className={sortType === "soon" ? "active" : ""}
-          >
-            Yakınlaşanlar
+            Yakın Tarih
           </li>
           <li
             onClick={() => {
@@ -121,7 +112,7 @@ function App() {
             }}
             className={sortType === "long" ? "active" : ""}
           >
-            Zamanı Olanlar
+            Uzak Tarih
           </li>
         </ul>
       )}
